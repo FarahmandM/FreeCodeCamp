@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Tribute Page</title>
+<link href="https://fonts.googleapis.com/css?family=Kumar+One" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!--script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script-->
+<!--script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.9.2/jquery.ui.core.min.js"></script-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.9.2/jquery.ui.effect.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.9.2/jquery.ui.effect-highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+h1, h2, h3, h4 {
+  font-family: 'Kumar One', cursive;
+}
+h1 {
+  font-size: 44px !important;
+}
+h2 {
+  font-size: 24px !important;
+}
+h3 {
+  font-size: 18px !important;
+}
+
+.jumbotron {
+  margin-top: 72px
+}
+
+#photo {
+  border: 4px #999 solid;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+}
+footer.footer {
+  background-color: #000;
+  color: #fff;
+  margin-top: 32px;
+  padding: 10px 0 2px 0;
+}
+#scrollToTop {
+  display: none;
+  position: fixed;
+  padding: 18px;
+  right: 32px;
+  bottom: 72px;
+  opacity: 0.75;
+}
+</style>
+<script>
+  jQuery(document).ready(function($){
+    $('#navbar > ul > li > a[href*="#"]').click(function(e) {
+      e.preventDefault();
+      var target = $(this.hash);
+      $("html, body").stop(true, false).animate({scrollTop: target.offset().top - 72}, 800, "easeOutExpo", function() {
+        $(target).effect("highlight");
+      });
+    });
+    $('#scrollToTop').click(function(e) {
+      $("html, body").animate({scrollTop: 0}, 1000, "easeOutExpo", function() {
+        $("#scroll-to-top").fadeOut(400);
+      });
+    });
+    if ($(this).scrollTop() > 100) {
+        $('#scrollToTop').show();
+    }
+    $(window).scroll(function() {
+      if ($(this).scrollTop() < 100) {
+        $('#scrollToTop').stop(true, false).fadeOut(400);
+      } else {
+        $('#scrollToTop').stop(true, false).fadeIn(400);
+      }
+    });
+  });
+</script>
+</head>
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="">Tribute Page</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="#preface">Preface</a></li>
+          <li><a href="#life">Life</a></li>
+          <li><a href="#contributions">Contributions</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </nav>
+  <div class="container">
+    <div class="jumbotron">
+      <div class="row">
+        <div class="col-xs-12 col-sm-8">
+          <h1 id="preface">Muhammad ibn Musa al-Khwarizmi</h1>
+          <p class="lead">
+            Muhammad ibn Musa al-Khwarizmi, formerly latinized as Algoritmi, was a Persian mathematician, astronomer, and geographer during the Abbasid Caliphate,
+            a scholar in the House of Wisdom in Baghdad. In the 12th century, Latin translations of his work on the Indian numerals introduced the decimal
+            positional number system to the Western world. Al-Khwārizmī's The Compendious Book on Calculation by Completion and Balancing presented the
+            first systematic solution of linear and quadratic equations in Arabic. He is often considered one of the fathers of algebra.
+            He revised Ptolemy's Geography and wrote on astronomy and astrology.
+            Some words reflect the importance of al-Khwārizmī's contributions to mathematics. "Algebra" is derived from al-jabr, one of the two operations he
+            used to solve quadratic equations. Algorism and algorithm stem from Algoritmi, the Latin form of his name.
+            His name is also the origin of (Spanish) guarismo and of (Portuguese) algarismo, both meaning digit.
+          </p>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <figure>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Khwarizmi_Amirkabir_University_of_Technology.png" id="photo" class="img-responsive" alt="Muhammad ibn Musa al-Khwarizmi">
+          <figcaption><a href="https://en.wikipedia.org/wiki/File:Khwarizmi_Amirkabir_University_of_Technology.png" target="_blank">Photo: M. Tomczak; Creative Commons license. <i class="fa fa-external-link" aria-hidden="true"></i></a></figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+    <main>
+      <h2 id="life">Life</h2>
+      <p>
+        Few details of al-Khwārizmī's life are known with certainty. He was born in a Persian family and Ibn al-Nadim gives his birthplace as Khwarezm in Greater Khorasan.<br>
+        He was born in c. 780 and died in c. 850.
+      </p>
+      <h2 id="contributions">Contributions</h2>
+      <p>
+        Al-Khwārizmī's contributions to mathematics, geography, astronomy and cartography established the basis for innovation in algebra and trigonometry.
+        His systematic approach to solving linear and quadratic equations led to algebra, a word derived from the title of his 830 book on the subject,
+        "The Compendious Book on Calculation by Completion and Balancing".
+      </p>
+      <h3>Algebra</h3>
+      <p>
+        The Compendious Book on Calculation by Completion and Balancing is a mathematical book written approximately 830 CE.
+        The book was written with the encouragement of Caliph al-Ma'mun as a popular work on calculation and is replete with examples and applications
+        to a wide range of problems in trade, surveying and legal inheritance. The term "algebra" is derived from the name of one of the basic operations
+        with equations (al-jabr, meaning "restoration", referring to adding a number to both sides of the equation to consolidate or cancel terms) described in this book.
+        The book was translated in Latin as Liber algebrae et almucabala by Robert of Chester (Segovia, 1145) hence "algebra", and also by Gerard of Cremona.
+        A unique Arabic copy is kept at Oxford and was translated in 1831 by F. Rosen. A Latin translation is kept in Cambridge.
+        It provided an exhaustive account of solving polynomial equations up to the second degree and discussed the fundamental methods of "reduction" and "balancing",
+        referring to the transposition of terms to the other side of an equation, that is, the cancellation of like terms on opposite sides of the equation.
+      </p>
+      <h3>Arithmetic</h3>
+      <p>
+        Al-Khwārizmī's second major work was on the subject of arithmetic, which survived in a Latin translation but was lost in the original Arabic.
+        The translation was most likely done in the 12th century by Adelard of Bath, who had also translated the astronomical tables in 1126.
+        The Latin manuscripts are untitled, but are commonly referred to by the first two words with which they start: Dixit algorizmi ("So said al-Khwārizmī"),
+        or Algoritmi de numero Indorum ("al-Khwārizmī on the Hindu Art of Reckoning"), a name given to the work by Baldassarre Boncompagni in 1857.
+        The original Arabic title was possibly Kitāb al-Jam‘ wat-Tafrīq bi-Ḥisāb al-Hind ("The Book of Addition and Subtraction According to the Hindu Calculation").
+      </p>
+      <h3>Astronomy</h3>
+      <p>
+        Al-Khwārizmī's Zīj al-Sindhind is a work consisting of approximately 37 chapters on calendrical and astronomical calculations and 116 tables with calendrical,
+        astronomical and astrological data, as well as a table of sine values. This is the first of many Arabic Zijes based on the Indian astronomical methods known
+        as the sindhind. The work contains tables for the movements of the sun, the moon and the five planets known at the time. This work marked the turning point in
+        Islamic astronomy. Hitherto, Muslim astronomers had adopted a primarily research approach to the field, translating works of others and learning already discovered knowledge.
+      </p>
+      <h3>Trigonometry</h3>
+      <p>
+        Al-Khwārizmī's Zīj al-Sindhind also contained tables for the trigonometric functions of sines and cosine. A related treatise on spherical trigonometry is also attributed to him
+      </p>
+      <h3>Geography</h3>
+      <p>
+        Al-Khwārizmī's third major work is his Kitāb Ṣūrat al-Arḍ also known as his Geography, which was finished in 833. It is a major reworking of Ptolemy's 2nd-century Geography,
+        consisting of a list of 2402 coordinates of cities and other geographical features following a general introduction.
+      </p>
+      <h3>Jewish calendar</h3>
+      <p>
+        Al-Khwārizmī wrote several other works including a treatise on the Hebrew calendar, titled Risāla fi istikhrāj ta’rīkh al-yahūd. It describes the Metonic cycle,
+        a 19-year intercalation cycle; the rules for determining on what day of the week the first day of the month Tishrei shall fall;
+        calculates the interval between the Anno Mundi or Jewish year and the Seleucid era; and gives rules for determining the mean longitude of the sun and the moon
+        using the Hebrew calendar. Similar material is found in the works of Abū Rayḥān al-Bīrūnī and Maimonides.
+      </p>
+      <h3>Other works</h3>
+      <p>
+        Ibn al-Nadim's Kitāb al-Fihrist, an index of Arabic books, mentions al-Khwārizmī's Kitāb al-Taʾrīkh, a book of annals. No direct manuscript survives;
+        however, a copy had reached Nusaybin by the 11th century, where its metropolitan bishop, Mar Elyas bar Shinaya, found it.
+        Elias's chronicle quotes it from "the death of the Prophet" through to 169 AH, at which point Elias's text itself hits a lacuna.
+        Several Arabic manuscripts in Berlin, Istanbul, Tashkent, Cairo and Paris contain further material that surely or with some probability comes
+        from al-Khwārizmī. The Istanbul manuscript contains a paper on sundials; the Fihrist credits al-Khwārizmī with Kitāb ar-Rukhāma(t).
+        Other papers, such as one on the determination of the direction of Mecca, are on the spherical astronomy.
+        Two texts deserve special interest on the morning width (Ma‘rifat sa‘at al-mashriq fī kull balad) and the determination of
+        the azimuth from a height (Ma‘rifat al-samt min qibal al-irtifā‘).
+        He also wrote two books on using and constructing astrolabes.
+      </p>
+      <p><a href="https://en.wikipedia.org/wiki/Muhammad_ibn_Musa_al-Khwarizmi" title="Wikipedia" target="_blank">Reference: Wikipedia <i class="fa fa-external-link" aria-hidden="true"></i></a></p>
+      <p><a href="https://www.britannica.com/biography/al-Khwarizmi" title="Read more from Britannica" target="_blank" class="btn btn-info pull-right"><i class="fa fa-info-circle" aria-hidden="true"></i> Read more from Britannica</a></p>
+    </main>
+  </div>
+  <footer class="footer"><p class="text-center">By <a href="https://www.freecodecamp.com/FarahmandM" title="@FarahmandM" target="_blank">Farahmand <i class="fa fa-external-link" aria-hidden="true"></i></a> for <a href="https://www.freecodecamp.com" title="Free Code Camp" target="_blank">FreeCodeCamp <i class="fa fa-external-link" aria-hidden="true"></i></a></p></footer>
+  <button id="scrollToTop" class="btn btn-default" title="Scroll to Top"><i class="fa fa-angle-double-up fa-2x" aria-hidden="true"></i></button>
+</body>
+</html>

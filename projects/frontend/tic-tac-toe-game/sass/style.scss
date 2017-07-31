@@ -1,0 +1,250 @@
+/*!
+@author: Farahmand Moslemi
+*/
+@import "compass/reset";
+@import "compass/css3";
+
+body {
+  background-color: #fff;
+  color: #333;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 18px;
+  line-height: 16px; // 20px
+  //@include perspective(1000px);
+}
+
+a{
+  color: #85c1e9;
+  text-decoration:none;
+}
+a:focus,a:hover{
+  color: #aed6f1;
+}
+a:focus{
+  outline:thin dotted #333;
+  outline:5px auto -webkit-focus-ring-color;
+  outline-offset:-2px;
+}
+a:active, a:hover{
+  outline:0;
+}
+a:link, a:visited, a:hover, a:active {
+	text-decoration:none;
+}
+
+strong {
+  font-weight: bold;
+}
+
+sup {
+  vertical-align: super;
+  font-size: 40%;
+  font-weight: bold;
+}
+
+h1 {
+  margin: 0px 0 4px 0;
+  font-size: 32px;
+  font-weight: bold;
+  line-height:30px;
+  @include text-shadow(2px 1px 2px rgba(180, 180, 180, 0.7));
+  text-align:center;
+
+  span {
+    font-size: 41px;
+  }
+}
+
+#wrapper {
+  width: 320px;
+  min-height: 555px;
+  margin: 30px auto 32px;
+
+  #messages {
+    width: 92%;
+    height: 98px;
+    margin: 14px auto 14px;
+    padding: 12px;
+    font-size: 10px;
+    overflow-x: auto;
+    overflow-y: auto;
+    color: #fff;
+    background-color: #333;
+    //border: 2px solid darken(#333, 10%);
+    @include border-radius(8px);
+
+    .message {
+      width: 91%;
+      padding: 0;
+      margin: 0;
+
+      /*
+      color: #333;
+      background-color: #fff;
+      border: 2px solid darken(#333, 10%);
+      @include border-radius(8px);
+      */
+      /*
+      &.info {
+        $color: #0070dd;
+        color: $color;
+        border-color: darken($color, 10%);
+      }
+      &.success {
+        $color: #50ab50;
+        color: $color;
+        border-color: darken($color, 10%);
+      }
+      &.error {
+        $color: #e05050;
+        color: $color;
+        border-color: darken($color, 10%);
+      }
+      &.warning {
+        $color: #f0aa50;
+        color: $color;
+        border-color: darken($color, 10%);
+      }
+      */
+    }
+  }
+
+  #dialog {
+    line-height: 28px;
+    vertical-align: middle;
+
+    .question {
+      .answer {
+        display: inline-block;
+        padding: 10px 12px;
+        margin: 4px 0;
+        background-color: #eee;
+        color: #333;
+        font-size: 140%;
+
+        &:hover {
+          background-color: #333;
+          color: #fff;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  #board {
+    display: none;
+
+    #scores {
+      margin-bottom: 8px;
+      font-size: 8px;
+
+      .score {
+        float: left;
+        width: 50%
+      }
+    }
+
+    table {
+      width:100%;
+      table-layout:fixed;
+      @include user-select(none);
+
+      tr {
+        &:first-child {
+          td {
+            border-top: none;
+          }
+        }
+        &:last-child {
+          td {
+            border-bottom: none;
+          }
+        }
+        td {
+          text-align: center;
+          vertical-align: middle;
+          height: 92px;
+          padding: 12px 0 0 12px;
+          font-size: 64px;
+          //font-weight: bold;
+          //background-color: #333;
+          background-color: #fff;
+          border: 12px solid #ddd;
+          
+          &:not(.filled):hover {
+            cursor: pointer;
+            background-color: #f5f5f5;
+          }
+
+          &.filled:hover {
+            cursor: not-allowed;
+          }
+
+          &.xTurn {
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" style="font-size: 50px; font-family: \'Press Start 2P\', cursive;"><text y="40">X</text></svg>'), auto !important;
+          }
+
+          &.oTurn {
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" style="font-size: 50px; font-family: \'Press Start 2P\', cursive;"><text y="40">O</text></svg>'), auto !important;
+          }
+
+          &.winBlock {
+            //background-color: #85c1e9;
+            background-color: #85e9c1;
+          }
+
+          &:first-child {
+            border-left: none;
+          }
+
+          &:last-child {
+            border-right: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+#resetAll {
+  width: 100%;
+  display: block;
+  border: none;
+  padding: 10px 12px;
+  background-color: #eee;
+  color: #333;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 140%;
+
+  &:hover {
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+  }
+}
+
+#footer {
+  width: 320px;
+  margin: 10px auto;
+  font-size: 12px;
+
+  p {
+    text-align: center;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.cf:before,
+.cf:after {
+    content: " ";
+    display: table;
+}
+.cf:after {
+    clear: both;
+}
+.cf {
+    *zoom: 1;
+}

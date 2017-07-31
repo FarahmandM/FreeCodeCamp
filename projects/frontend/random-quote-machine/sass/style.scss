@@ -1,0 +1,191 @@
+/*!
+Author: Farahmand Moslemi
+*/
+
+@import "compass/reset";
+@import "compass/css3";
+
+a{
+  color: #444;
+  text-decoration:none;
+}
+a:focus,a:hover{
+  color: #777;
+}
+a:focus{
+  outline:thin dotted #333;
+  outline:5px auto -webkit-focus-ring-color;
+  outline-offset:-2px;
+}
+a:active, a:hover{
+  outline:0;
+}
+a:link, a:visited, a:hover, a:active {
+	text-decoration:none;
+}
+
+#quoteWrapper {
+  display: block;
+  margin: 5% auto 50px auto;
+  padding: 36px 48px;
+  width: 60%;
+  background-color: #eee;
+  border: 8px dashed #ddd;
+  @include border-radius(8px);
+  
+  #quote {
+    display: block;
+    clear: both;
+    font-family: 'Dancing Script', cursive;
+    font-size: 48px;
+    //text-align: justify;
+    text-align: center;
+    
+    &:before {
+      position: absolute;
+      margin-left: -28px;
+      content:'\275d';
+    }
+    &:after {
+      position: absolute;
+      margin-left: 0;
+      content:'\275e';
+    }
+  }
+  
+  #author {
+    display: block;
+    clear: both;
+    margin-top: 20px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 20px;
+    float: right;
+
+    &:before {
+      position: absolute;
+      margin-left: -18px;
+      content:'\223c';
+    }
+  }
+  
+  #actions {
+    display: block;
+    clear: both;
+    margin-top: 60px;
+  }
+}
+
+.btn {
+  display: block;
+  margin: 0;
+  padding: 12px 16px;
+  background-color: black;
+  color: white;
+  border: none;
+  @include border-radius(4px);
+  font-size: 18px;
+  font-weight: bold;
+  
+  &:hover {
+    background-color: #444;
+    cursor: pointer;
+  }
+  
+  &.btn-has-img {
+    padding: 6px 12px;
+    img {
+      margin-top: 4px;
+      height: 24px;
+    }
+  }
+}
+
+#footer {
+  background-color: #eee;
+  //border: 4px dashed #ddd;
+  //border-style: dotted;
+  border-style: groove;
+  border-color: #ccc;
+  border-width: 4px 0;
+  
+  p {
+    padding: 8px 0;
+    text-align:center;
+    font-size: 16px;
+    
+  }
+}
+
+@include keyframes(animatedButton) {
+  0% {
+    @include transform(scale(1) rotate(0) translateX(0));
+  }
+  3% {
+    @include transform(scale(1.05) rotate(15deg) translate(20px, -10px));
+  }
+  8% {
+    @include transform(scale(0.9) rotate(5deg) translateX(20px));
+  }
+  12% {
+    @include transform(scale(0.85) rotate(5deg) translateX(10px));
+  }
+  20% {
+    @include transform(scale(1.05) rotate(0deg));
+  }
+  21% {
+    @include transform(scale(1.1) rotate(-8deg));
+  }
+  28% {
+    @include transform(scale(1) rotate(-5deg));
+  }
+  30% {
+    @include transform(scale(1.05) rotate(5deg));
+  }
+  33% {
+    @include transform(scale(1) rotate(0deg));
+  }
+  40% {
+    @include transform(scale(0.95) rotate(0));
+  }
+  45% {
+    @include transform(scale(1.1) rotate(-15deg));
+  }
+  48% {
+    @include transform(scale(1.05) rotate(-5deg));
+  }
+  50% {
+    @include transform(scale(1) rotate(0) translateX(0));
+  }
+  90% {
+    @include transform(scale(1) rotate(0) translateX(20px));
+  }
+  95% {
+    @include transform(scale(1) rotate(0) translateX(0px));
+  }
+  100% {
+    @include transform(scale(1) rotate(0) translateX(0));
+  }
+}
+.btn-animated{
+  @include animation(animatedButton 2500ms linear 0s infinite);
+}
+
+.pull-left {
+  float:left !important;
+}
+.pull-right {
+  float:right !important;
+}
+
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}

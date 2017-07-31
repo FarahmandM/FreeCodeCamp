@@ -1,0 +1,121 @@
+/*!
+@author: Farahmand Moslemi
+*/
+@import "compass/reset";
+@import "compass/css3";
+
+$w: 320px;
+
+body {
+  background-color: #fff;
+  color: #333;
+  font-family: 'Orbitron', sans-serif;
+  font-size:18px;
+  line-height: 20px;
+  @include perspective(1000px);
+}
+
+a{
+  color: #85c1e9;
+  text-decoration:none;
+}
+a:focus,a:hover{
+  color: #aed6f1;
+}
+a:focus{
+  outline:thin dotted #333;
+  outline:5px auto -webkit-focus-ring-color;
+  outline-offset:-2px;
+}
+a:active, a:hover{
+  outline:0;
+}
+a:link, a:visited, a:hover, a:active {
+	text-decoration:none;
+}
+
+strong {
+  font-weight: bold;
+}
+
+sup {
+  vertical-align: super;
+  font-size: 40%;
+  font-weight: bold;
+}
+
+h1 {
+  margin: 0px 0 4px 0;
+  font-family: 'Abril Fatface', cursive;
+  font-size: 24px;
+  line-height:20px;
+  color: #fff;
+  @include text-shadow(3px 2px 3px #555, 0 0 5px rgba(200, 200, 200, .5));
+  text-align:center;
+}
+h2 {
+  margin: 4px 0;
+  font-family: 'Abril Fatface', cursive;
+  font-size: 12px;
+  color: #fff;
+  @include text-shadow(0px 0px 1px #eee);
+  text-align:center;
+}
+.container {
+  margin-top: 60px;
+}
+
+#calc {
+  width: $w;
+  margin:($w / 5) auto;
+  padding: 24px;
+  //background-color: #fae9e3;
+  //border: 2px solid #dd8877;
+  background-color: #000;
+  border: 2px solid #777;
+  @include border-radius(16px);
+  @include box-shadow(0px 0px 45px rgba(9, 9, 9, 0.9), 0px 0px 25px rgba(9, 9, 9, 0.55));
+  @include transform(rotateX(-10deg));
+  
+  table {
+    width:100%;
+    table-layout:fixed;
+    
+    td, th {
+      text-align:center;
+      vertical-align: middle;
+    }
+    tbody {
+      @include user-select(none);
+      
+      td {
+        padding: 24px 0;
+        font-size: 34px;
+        //font-weight: bold;
+        background-color: #fff;
+        border: 2px solid #ddd;
+        
+        &:hover {
+          cursor: pointer;
+          background-color: #f5f5f5;
+        }
+        
+        &.red {
+          color: #b00;
+        }
+      }
+    }
+  }
+}
+
+#screen {
+  padding: 10px 3px 1px 3px;
+  margin: 4px auto;
+  overflow: hidden;
+  background-color: #ddd;
+  border: 2px solid #444;
+  @include border-radius(4px);
+  font-size: 38px;
+  line-height: 25px;
+  text-align: right;
+}
