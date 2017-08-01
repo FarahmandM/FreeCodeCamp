@@ -9,7 +9,7 @@ Free Code Camp projects written by Farahmand Moslemi
 
 **Don't look at the source code of the projects. Try hard and you can figure it out.**
 
-## List Of Projects
+## Projects
 
  Screenshot | Project Name | Type | Demo Link
  ---------- | ------------ |----- | ---------
