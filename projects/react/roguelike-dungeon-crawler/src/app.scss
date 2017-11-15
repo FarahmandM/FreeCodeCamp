@@ -1,0 +1,234 @@
+/*!
+ * @author: Farahmand Moslemi
+*/
+@import "compass";
+//@import "compass/reset";
+
+body {
+  //padding: 12px;
+  //font-family: Open Sans, Helvetica, sans-serif;
+  font-family: 'Press Start 2P', cursive;
+
+  & > h1, & > div.container > h1, & > div.container-fluid > h1 {
+    margin: 20px 0;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+  }
+}
+
+a {
+  text-decoration: none;
+  
+  &:link, &:visited {
+    color: #0C468D;
+  }
+  
+  &:hover {
+    color:#051C3D;
+  }
+}
+
+.container {
+  display: block;
+  margin: 20px auto;
+  width: 50%; //TODO responsive
+  @media screen and (max-width: 800px) {
+    width: 75%;
+  }
+  @media screen and (max-width: 500px) {
+    width: 100%;
+  }
+}
+
+$wall-color: #581900; // #eee
+$floor-color: #999;
+$player-color:#00f;
+$enemy-color: #f00;
+$boss-color: #ff0;
+$weapon-color:#0ff;
+$healing-color:#0f0;
+$dark-color: #000;
+
+.player-color {color: $player-color;}
+.enemy-color {color: $enemy-color;}
+.boss-color {color: $boss-color;}
+.weapon-color {color: $weapon-color;}
+.healing-color {color: $healing-color;}
+
+dl {
+  float: left;
+  clear: both;
+  font-size: 10px;
+
+  dt {
+    float: left;
+    font-weight: bold;
+
+    &::after {
+      content: ': ';
+    }
+  }
+  dd {
+    float: left;
+    margin: 0 38px 0 0;
+  }
+}
+
+table {
+  width: 100%;
+  border: 1px solid #999;
+  border-collapse: collapse;
+  table-layout: fixed;
+
+  &#help {
+    margin-top: 14px;
+    thead {
+      font-size: 10px;
+      th {
+        padding: 8px;
+      }
+    }
+    tbody {
+      font-size: 24px;
+      td {
+        background-color: #eee!important;
+
+        &:after{
+          margin-top: 0;
+        }
+      }
+    }
+  }
+
+  
+
+  // Hint from https://stackoverflow.com/a/22835903/1440242
+  td {
+    position: relative;
+    //border: 1px solid #444;
+    background-color: #333;
+    vertical-align: middle !important;
+    text-align: center;
+
+    &:after {
+      content: '';
+      display: block;
+      margin-top: 100%;
+    }
+
+    &.wall { background-color: $wall-color; }
+    &.floor { background-color: $floor-color; }
+    &.player { background-color: $player-color; }
+    &.enemy { background-color: $enemy-color; }
+    &.boss { background-color: $boss-color; }
+    &.weapon { background-color: $weapon-color; }
+    &.healing { background-color: $healing-color; }
+    &.dark { background-color: $dark-color; }
+  }
+}
+
+button {
+  margin: 12px 12px 12px 0;
+  padding: 10px 12px;
+  float: left;
+  //clear: both;
+  display: block;
+  outline: none;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 12px;
+  font-weight: bold;
+  color: #333;
+  background-color: #aaaab8;
+  border: 0;
+  @include border-radius(8px);
+  @include box-shadow(0px 8px #000);
+
+  &:hover {
+    background-color: #7676b8;
+    cursor: pointer;
+  }
+
+  &.active, &:active {
+    color: #fff;
+    background-color: #555;
+    @include box-shadow(0px 6px #000);
+    @include translateY(2px);
+  }
+}
+
+.btn-group {
+  display: inline-block;
+  float: right;
+  text-align: center;
+
+  button {
+    margin: 12px 3px;
+    padding: 6px 14px;
+
+    &#up {
+      margin: 0 auto;
+      clear: both;
+      float: none;
+    }
+    &:not(#up) {
+      clear: none;
+      float: left;
+    }
+  }
+
+}
+
+h2 {
+  clear: both;
+  font-size: 14px;
+  text-align: center;
+}
+
+.success {
+  color: #00aa00;
+}
+.error {
+  color: #aa0000;
+}
+
+noscript {
+  display: block;
+  margin: 0 auto;
+  color:#b80707;
+  text-align: center;
+  font-weight: bold;
+}
+
+#footer {
+  display: block;
+  width: 320px;
+  margin: 40px auto 0 auto;
+  font-size: 12px;
+  //@include text-shadow(0 0 7px rgba(0, 0, 0, .9));
+  //@include opacity(0.7);
+
+  p {
+    text-align: center;
+
+    a {
+      color: #111;
+
+      &:hover {
+        color: #333;
+      }
+    }
+  }
+}
+
+.cf:before,
+.cf:after {
+    content: " ";
+    display: table;
+}
+.cf:after {
+    clear: both;
+}
+.cf {
+    *zoom: 1;
+}

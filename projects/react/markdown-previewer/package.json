@@ -1,0 +1,25 @@
+{
+  "name": "markdown-previewer",
+  "version": "1.0.0",
+  "description": "Markdown Previewer by Farahmand Moslemi",
+  "main": "src/app.js",
+  "scripts": {
+    "build": "compass compile && webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Farahmand Moslemi",
+  "license": "MIT",
+  "dependencies": {
+    "marked": "^0.3.6"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "webpack": "^3.5.5"
+  }
+}
