@@ -1,0 +1,177 @@
+/*!
+ * @author: Farahmand Moslemi
+*/
+@import "compass";
+//@import "compass/reset";
+
+$info-color: #0077dd;
+$success-color: #00aa00;
+$error-color: #aa0000;
+
+.info {
+  color: $info-color;
+  border-color: $info-color;
+}
+.success {
+  color: $success-color;
+  border-color: $success-color;
+}
+.error {
+  color: $error-color;
+  border-color: $error-color;
+}
+
+body {
+  //padding: 12px;
+  font-family: 'Poiret One', cursive;
+  font-size: 24px;
+
+  & > h1, & > div.container > h1, & > div.container-fluid > h1 {
+    margin: 20px 0;
+    text-align: center;
+    font-size: 32px;
+    //font-weight: bold;
+  }
+}
+
+svg {
+  font-family: 'Inconsolata', monospace;
+  display: block;
+  margin: 0 auto;
+  border: 1px solid rgba(0,0,0, .2);
+}
+
+div.message {
+  padding: 8px;
+  border-width: 2px;
+  border-style: solid;
+  @include border-radius(4px);
+}
+
+#description {
+  margin: 20px 10px 0 16px;
+  overflow-x: auto;
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+  
+  &:link, &:visited {
+    color: #0C468D;
+  }
+  
+  &:hover {
+    color:#051C3D;
+  }
+}
+
+.container {
+  display: block;
+  margin: 20px auto;
+  width: 80%; //TODO responsive
+  @media screen and (max-width: 800px) {
+    width: 90%;
+  }
+  @media screen and (max-width: 500px) {
+    width: 100%;
+  }
+}
+
+.bar {
+  stroke: #00a;
+  fill: blue;
+
+  &:hover{
+    stroke: blue;
+    fill: #55f;
+  }
+}
+
+.axis {
+  text {
+    font-size: 18px;
+  }
+  .label {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  line, path {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+  }
+}
+
+h2 {
+  clear: both;
+  font-size: 18px;
+  //text-align: center;
+}
+
+#infoBox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  padding: 3px 5px;
+  font-family: 'Inconsolata', monospace;
+  font-size: 14px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, .6);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 0, 0, .7);
+  @include border-radius(5px);
+  @include opacity(0);
+  //transition: opacity 500ms ease-out;
+  transition: all 400ms ease-out;
+
+  &.shown {
+    @include opacity(1);
+  }
+
+  h2 {
+    margin: 5px 0;
+  }
+}
+
+noscript {
+  display: block;
+  margin: 0 auto;
+  color:#b80707;
+  text-align: center;
+  font-weight: bold;
+}
+
+#footer {
+  display: block;
+  width: 320px;
+  margin: 40px auto 0 auto;
+  font-size: 16px;
+  //@include text-shadow(0 0 7px rgba(0, 0, 0, .9));
+  //@include opacity(0.7);
+
+  p {
+    text-align: center;
+
+    a {
+      color: #111;
+
+      &:hover {
+        color: #333;
+      }
+    }
+  }
+}
+
+.cf:before,
+.cf:after {
+    content: " ";
+    display: table;
+}
+.cf:after {
+    clear: both;
+}
+.cf {
+    *zoom: 1;
+}
